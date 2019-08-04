@@ -23,10 +23,15 @@ state = {
   ] 
 }
 
+markComplete = (id) => {
+  console.log(id)
+}
+
   render() {
     return (
     <div className="App">
-      <Todos todos={this.state.todos} />
+      <Todos todos={this.state.todos} 
+      markComplete = {this.markComplete}/>
     </div>
   );
   }
