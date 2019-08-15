@@ -10,4 +10,4 @@ function About() {
     )
 }
 
-export default AboReact.Fragment
+export default About;

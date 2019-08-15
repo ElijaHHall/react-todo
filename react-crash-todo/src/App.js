@@ -4,6 +4,7 @@ import Todos from "./components/Todos";
 import './App.css'
 import Header from './components/layout/Header'
 import AddTodo from './components/AddTodo'
+import About from './components/pages/About'
 import uuid from 'uuid';
 
 
@@ -59,11 +60,15 @@ addTodo = (title) => {
           <div className="container">
 
               <Header/>
-              <AddTodo addTodo={this.addTodo}/>
-              <Todos todos={this.state.todos} 
-              markComplete = {this.markComplete} 
-              delTodo={this.delTodo} />
-
+              <Route path='/' render={props => (
+                <React.Fragment>
+                  <AddTodo addTodo={this.addTodo}/>
+                  <Todos todos={this.state.todos} 
+                  markComplete = {this.markComplete} 
+                  delTodo={this.delTodo} />
+                </React.Fragment>
+              )} />
+              <Route path="/about" component={About}/>
           </div>
         </div>
       </Router>
